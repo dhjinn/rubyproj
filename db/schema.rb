@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180426091846) do
+ActiveRecord::Schema.define(version: 20180426120337) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20180426091846) do
     t.date "date"
     t.string "notes"
     t.boolean "reimbursed"
+    t.integer "admin_id"
   end
 
   create_table "users", force: :cascade do |t|
