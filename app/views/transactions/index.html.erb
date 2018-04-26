@@ -5,12 +5,12 @@
 				Club: <%= transaction.admin.club_name %> Date: <%= transaction.date %> 
 				Amount: <%= transaction.value %> Note: <%= transaction.notes %>
 				Reimbursed: <%= transaction.reimbursed %>
-		  	<% end %>
+		  	<% end %>`
 	  	<% end %>
 	  	<%= link_to "Back", users_url, :class => "button medium"%>
 
 	<% elsif admin_signed_in? %>
-		<% if @admin %>
+		<% if @admin %>                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 			<% @admin.transactions.each do |transaction| %>
 				Club: <%= transaction.admin.club_name %> Member: <%= transaction.user.name %>
 				Date: <%= transaction.date %> 
