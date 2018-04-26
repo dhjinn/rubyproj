@@ -1,16 +1,42 @@
+<h3>User Dashboard</h3>
+<p>Name: <%= @user.name if @user %></p>
+<p>Email: <%= @user.email if @user %></p>
+
+
+<h3>Pending Transactions</h3>
+  <% if @user %>
+    <% @user.transactions.each do |transaction| %>
+      <% if not transaction.reimbursed %>
+          Club: <%= transaction.admin.club_name %> Date: <%= transaction.date %> 
+          Amount: <%= transaction.value %> Note: <%= transaction.notes %>
+        <% end %>   
+      <% end %>
+  <% end %>
+<%= link_to "All Transactions", all_path, :class => "button medium" if @user == current_user %>
+
+<h3>Clubs I'm In</h3>
 <div class="container">
-  <div class="row">
-    <h3>Users</h3>
-    <div class="column">
-      <table class="table">
-        <tbody>
-          <% @users.each do |users| %>
+    <div class="row">
+        <table>
+
+          <thead>
             <tr>
-              <%= render user %>
+              <th>Member ID</th>
+              <th>Group ID</th>
             </tr>
-          <% end %>
+          </thead>
+
+          <tbody>
+            <% if @clubs %>
+              <% @clubs.each do |club| %>
+                <tr>
+                  <td><%= club.club_name %></td>
+  <!--                 <td><%= club.id %></td> -->
+                </tr>
+              <% end %>
+            <% end %>
         </tbody>
-      </table>
+
+        </table>
     </div>
-  </div>
 </div>
