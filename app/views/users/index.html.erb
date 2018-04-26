@@ -1,5 +1,5 @@
 <h3>User Dashboard</h3>
-<p>Name: <%= @user.name if @user %></p>
+<p>Name: <%= @user.name if @user.name %></p>
 <p>Email: <%= @user.email if @user %></p>
 
 <%= link_to "New Transaction", new_path, :class => "button medium"%>

@@ -8,7 +8,7 @@
 		  	<% end %>
 	  	<% end %>
 	  	<%= link_to "Back", users_url, :class => "button medium"%>
-	<% end %>
+
 	<% elsif admin_signed_in? %>
 		<% if @admin %>
 			<% @admin.transactions.each do |transaction| %>

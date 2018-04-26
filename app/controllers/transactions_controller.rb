@@ -12,6 +12,11 @@ class TransactionsController < ApplicationController
 		@transaction.save
 	end
 
+	def new
+		@transaction = Transaction.new
+	end
+
+
 	def delete
 
 	end 
@@ -25,4 +30,6 @@ class TransactionsController < ApplicationController
 	
 	def transaction_params
 		params.require(:transaction).permit(:admin, :date, :value, :notes)
+	end
+
 end
