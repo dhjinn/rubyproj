@@ -10,7 +10,7 @@
     		Amount: <%= transaction.value %> Note: <%= transaction.notes %>
   		<% end %>		
   	<% end %>
-<%= link_to "All Transactions", new_path, :class => "button medium" if @user == current_user %>
+<%= link_to "All Transactions", all_path, :class => "button medium" if @user == current_user %>
 
 <h3>Clubs I'm In</h3>
 <div class="container">
@@ -36,4 +36,3 @@
         </table>
     </div>
 </div>
-<%= link_to "Add Club", new_path, :class => "button medium" if @user == current_user %>

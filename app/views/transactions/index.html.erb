@@ -1,0 +1,8 @@
+<h3>All Transactions for <%= @user.name %></h3>
+	<% @user.transactions.each do |transaction| %>
+		Club: <%= transaction.admin.club_name %> Date: <%= transaction.date %> 
+		Amount: <%= transaction.value %> Note: <%= transaction.notes %>
+		Reimbursed: <%= transaction.reimbursed %>
+		
+  	<% end %>
+<%= link_to "All Transactions", new_path, :class => "button medium" if @user == current_user %>
