@@ -1,7 +1,7 @@
 <h1>BUD BUD</h1>
 <h3> 
 	<% if user_signed_in? %>
-	    <%= link_to "Go To Dashboard", users, :class => 'button_to'  %>
+	    <%= link_to "Go To Dashboard", users_url, :class => 'button_to'  %>
 	<% elsif admin_signed_in? %>
 
 	<% else %>
